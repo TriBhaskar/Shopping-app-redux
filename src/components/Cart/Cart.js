@@ -1,4 +1,4 @@
-import { UseSelector, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Card from "../UI/Card";
 import classes from "./Cart.module.css";
