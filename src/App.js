@@ -9,6 +9,7 @@ function App() {
   const showCart = useSelector((state) => state.ui.cartIsVisible);
   const cart = useSelector((state) => state.cart);
 
+  // Send cart data to the server whenever it changes
   useEffect(() => {
     fetch(
       "https://test-react-app-6e16f-default-rtdb.firebaseio.com/cart.json",
@@ -18,6 +19,7 @@ function App() {
       }
     );
   }, [cart]);
+
   return (
     <Layout>
       {showCart && <Cart />}
