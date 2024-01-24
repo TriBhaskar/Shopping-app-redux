@@ -56,7 +56,10 @@ export const sendCartData = (cart) => {
         "https://test-react-app-6e16f-default-rtdb.firebaseio.com/cart.json",
         {
           method: "PUT",
-          body: JSON.stringify(cart),
+          body: JSON.stringify({
+            items: cart.items,
+            totalQuantity: cart.totalQuantity,
+          }),
         }
       );
 
