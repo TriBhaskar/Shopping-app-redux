@@ -4,11 +4,19 @@ import { createSlice } from "@reduxjs/toolkit";
 // Creating a slice of the Redux store for managing UI state
 const uiSlice = createSlice({
   name: "ui", // Name of the slice
-  initialState: { cartIsVisible: false }, // Initial state of the slice
+  initialState: { cartIsVisible: false, notification: null }, // Initial state of the slice
   reducers: {
     toggle(state) {
       // Reducer function for toggling the cart visibility
       state.cartIsVisible = !state.cartIsVisible;
+    },
+    showNotification(state, action) {
+      // Reducer function for showing a notification
+      state.notification = {
+        status: action.payload.status,
+        title: action.payload.title,
+        message: action.payload.message,
+      };
     },
   },
 });
