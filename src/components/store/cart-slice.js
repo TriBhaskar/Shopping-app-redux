@@ -4,8 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 // Creating a cartSlice using createSlice function
 const cartSlice = createSlice({
   name: "cart",
-  initialState: { items: [], totalQuantity: 0, totalAmount: 0 },
+  initialState: { items: [], totalQuantity: 0 },
   reducers: {
+    replaceCart(state, action) {
+      state.totalQuantity = action.payload.totalQuantity;
+      state.items = action.payload.items;
+    },
     // Reducer function to add an item to the cart
     addItemToCart(state, action) {
       const newItem = action.payload;
